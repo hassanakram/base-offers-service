@@ -1,3 +1,4 @@
+require_relative 'base_scraper_service/base_scraper'
 require_relative 'base_scraper_service/agent_object'
-require_relative 'base_scraper_service/send_request'
 require_relative 'base_scraper_service/location_service'
+require_relative 'base_scraper_service/base'
