@@ -6,7 +6,7 @@ configure { set :server, :puma }
 
 class Base < Sinatra::Base
 
-  get "/#{ENV['SERVICE_NAME']}/isbn_offers".to_s do
+  get "/#{ENV['SERVICE_NAME']}/isbn_offers" do
     isbn = params[:isbn]
     uuid = SecureRandom.uuid
 
