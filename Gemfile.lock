@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    base_scraper_service (0.0.1)
+    base_scraper_service (0.1.0)
       activesupport
       byebug
       csv

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name               = "base_scraper_service"
-  s.version            = "0.0.1"
+  s.version            = "0.1.0"
   s.authors = ["Qbatch"]
   s.date = %q{2020-05-11}
   s.description = %q{Base scraper service to handle multiple services}
