@@ -9,28 +9,33 @@ module BaseScraper
         # 1- return state abbreviation if matched with state abbreviations
         # 2- return state abbreviation if matched with state name
         # 3- otherwise return empty string
-        state = us_states_hash.keys.select { |state_abbreviation| @address.upcase.include?(state_abbreviation) }.first
-        return state if state.present? && @address.length != 3
-        state = us_states_hash.select { |_, state| @address.include?(state) }.first&.first
 
-        return state.to_s
+        @state = us_states_hash.keys.select { |state_abbreviation| @address.upcase.include?(state_abbreviation) }.first
+        return @state if @state.present? && @address.length != 3
+        @state = us_states_hash.select { |_, state| @address.include?(state) }.first&.first
+
+        return @state.to_s
+
       end
+
+
 
       def extract_country
         # 1- return country abbreviation if matched with country abbreviations
         # 2- return country abbreviation if matched with country name
         # 3- return USA if address contains a USA state
         # 4- otherwise return empty string
+
         country = countries_hash.keys.select { |country_abbreviation| @address.include?(country_abbreviation) }.first
-        puts country, @address
         return country if country.present?
-        country = countries_hash.select { |_, country_name| @address.include?(country_name) }.first&.first
+        country = countries_hash.select { |_, country_name| @address.downcase.include?(country_name.downcase) }.first&.first
         return country if country.present?
 
-        return 'USA' if extract_state.present?
+        return 'USA' if @state.present?
 
         return country.to_s
       end
+
 
       private
 
@@ -327,7 +332,7 @@ module BaseScraper
           'ARE' => 'United Arab Emirates',
           'GBR' => 'United Kingdom of Great Britain and Northern Ireland',
           'UMI' => 'United States Minor Outlying Islands',
-          'USA' => 'United States of America',
+          'USA' => 'United States',
           'URY' => 'Uruguay',
           'UZB' => 'Uzbekistan',
           'VUT' => 'Vanuatu',

@@ -1,15 +1,3 @@
-# require 'mechanize'
-# require 'nokogiri'
-# require 'thread'
-# require 'fileutils'
-# require 'logger'
-# require 'date'
-# require_relative 'user_agent'
-# require_relative 'agent_object'
-# require 'base_scraper_service'
-
-# require "dotenv"
-
 require 'csv'
 require 'active_support/time'
 require 'library_stdnums'

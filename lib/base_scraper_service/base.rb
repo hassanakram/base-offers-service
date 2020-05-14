@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'dotenv'
 require "./#{ENV['SERVICE_NAME']}_offers_service"
 
 configure { set :server, :puma }
