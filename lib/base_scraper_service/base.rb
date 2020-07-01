@@ -1,12 +1,11 @@
 require 'sinatra'
-require 'dotenv'
 require "./#{ENV['SERVICE_NAME']}_offers_service"
 
 configure { set :server, :puma }
 
 class Base < Sinatra::Base
 
-  get "/#{ENV['SERVICE_NAME']}/isbn_offers".to_s do
+  get "/#{ENV['SERVICE_NAME']}/isbn_offers" do
     isbn = params[:isbn]
     uuid = SecureRandom.uuid
 

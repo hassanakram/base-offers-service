@@ -1,16 +1,6 @@
-require 'mechanize'
-require 'nokogiri'
-require 'thread'
-require 'fileutils'
-require 'logger'
-require "dotenv"
 require 'csv'
-require 'date'
 require 'active_support/time'
 require 'library_stdnums'
-require 'base_scraper_service'
-require_relative 'user_agent'
-require_relative 'agent_object'
 
 module BaseScraper
   class Service

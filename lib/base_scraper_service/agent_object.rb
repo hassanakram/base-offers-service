@@ -1,6 +1,5 @@
 require_relative 'user_agent'
 require "mechanize"
-require "nokogiri"
 
 module BaseScraper
   class Service
